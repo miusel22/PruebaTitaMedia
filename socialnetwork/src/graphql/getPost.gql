@@ -1,0 +1,14 @@
+
+query getPos{
+id
+text
+image
+likes
+tags
+publishDate
+owner
+
+}
+
+
+
