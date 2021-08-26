@@ -1,0 +1,74 @@
+type User {
+    id: String,
+    title: String,
+    firstName: String,
+    lastName: String,
+    picture: String
+}
+type Post{
+id: String,
+text: String,
+image:String,
+likes: Int,
+owner: User
+publishDate: String,
+tags:[String]
+}
+type Comment{
+id: String,
+Message: String,
+post: String,
+publishDate: String
+}
+
+type List {
+    data: [User]
+    total: Int
+    page: Int
+    limit: Int
+}
+
+type PostList{
+   data: [Post]
+    total: Int
+    page: Int
+    limit: Int
+}
+type Comments{
+   data: [Comment]
+    total: Int
+    page: Int
+    limit: Int
+}
+type Location {
+    street: String
+    city: String
+    state: String
+    country: String
+    timezone: String
+}
+
+type UserFull {
+    id: String
+    title: String
+    firstName: String
+    lastName: String
+    gender: String
+    email: String
+    dateOfBirth: String
+    registerDate: String
+    phone: String
+    picture: String
+    location: Location
+    updatedDate: String
+}
+
+
+type Query {
+  list: List
+  users: [User]
+  user(id: String) : UserFull
+ listPost: PostList
+ listComment(id: String) : Comments
+}
+

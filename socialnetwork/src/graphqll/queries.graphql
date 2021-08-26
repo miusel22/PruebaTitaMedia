@@ -1,0 +1,10 @@
+
+query getPosts {
+{
+  listPost{
+    data{
+      tags
+    }
+  }
+}
+}
