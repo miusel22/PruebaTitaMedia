@@ -35,7 +35,6 @@ publishDate
   useEffect(() => {
 
   }, [data]);
-  console.log('aqui ta data', data);
   return (
 
     <div>
