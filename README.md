@@ -1,7 +1,7 @@
-TITAMEDIA
+## TITAMEDIA
 
 ## 
-Esta aplicación fue realizada en React con TypeScriptTypescript, Graphql y CSS.
+Esta aplicación fue realizada en React con TypeScriptt, Graphql y CSS.
 ### ¿Cómo se configura?
 
 ## FRONTEND  
