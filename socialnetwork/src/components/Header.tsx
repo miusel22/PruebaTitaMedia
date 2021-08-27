@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { auth } from '../firebase';
 import './styles/index.css';
 import Logo from '../img/IconPanda.png';

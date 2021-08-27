@@ -19,7 +19,7 @@ export const App = () => {
 }
 `
 
-const {loading,data } = useQuery(GETTAG);
+const {data } = useQuery(GETTAG);
   const [user] = useAuthState(auth);
   useEffect(() => {
  

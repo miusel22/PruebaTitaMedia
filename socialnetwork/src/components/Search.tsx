@@ -25,7 +25,7 @@ publishDate
   }
 }
 `;
-const {loading,error,data } = useQuery(Search,
+const {loading,data } = useQuery(Search,
     {
      variables: {
       tag: query

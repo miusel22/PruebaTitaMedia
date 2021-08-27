@@ -26,7 +26,7 @@ query getMessage($id: String) {
   }
   }
 }`;
-const { loading, error, data } = useQuery(GETCOMMENTS,
+const {  data } = useQuery(GETCOMMENTS,
     {
      variables: {
       id: idMsg
@@ -50,14 +50,14 @@ const [openModalUser, setOpenModalUser] = useState(false);
                  
                        <>
                        <div className="comments">
-                         <img src={cm.owner.picture} alt=""/>
+                         <img onClick={() => { setOpenModalUser(true) }}src={cm.owner.picture} alt=""/>
                          <div className="cm">
                              <h3>{cm.owner.lastName}</h3>
                              <p>{cm.message}</p>
 
                          </div>
                          </div>
-                         {/* {openModalUser && <ModalUser dataContentUser={{setOpenModalUser, cm.owner.id}} />} */}
+                         {openModalUser && <ModalUser dataContentUser={{setOpenModalUser, id : cm.owner.id}} />}
                          
                          </>
                      

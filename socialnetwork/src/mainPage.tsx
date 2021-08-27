@@ -10,7 +10,7 @@ import { Search } from './components/Search';
 
 
 
-const Mainpage = ({TagsData}:any) => {
+const Mainpage = ({ TagsData }: any) => {
 
 
 
@@ -38,59 +38,70 @@ const Mainpage = ({TagsData}:any) => {
     }`
 
 
-    const { loading, data } = useQuery(GETLIST);
-   
+    const { loading, error, data } = useQuery(GETLIST);
 
-    
+
+
     useEffect(() => {
-     
+
     }, [data])
 
     const [tagState, setTagState] = useState("");
-    if(tagState){
-    return(
-       <>
-         <Header />
-         <div className="filters">
-            <h3>Search your favorite tag!</h3>
-            <select onChange={(e)=>setTagState(e.target.value)}>
-                   
-                   {  TagsData?.map((tag: any) => (
-                        <option value={tag}>{tag}</option>
-   
-                   ))}
-                    </select>   
-            </div>
-         <Search query={tagState}/>
-       </> 
-    )
-    }else{
-    
+    if (tagState) {
+        return (
+            <>
+                <Header />
+                {error ? 'si,error' : (
+                    <>
+                        <div className="filters">
+                            <h3>Search your favorite tag!</h3>
+                            <select onChange={(e) => setTagState(e.target.value)}>
+
+                                {TagsData?.map((tag: any) => (
+                                    <option value={tag}>{tag}</option>
+
+                                ))}
+                            </select>
+                        </div>
+                        <Search query={tagState} />
+                    </>
+                )}
+
+            </>
+        )
+    } else {
+
     }
     return (
-        <div className="body-main-page">
+        <>
             <Header />
-            <div className="filters">
-            <h3>Search your favorite tag!</h3>
-            <select onChange={(e)=>setTagState(e.target.value)}>
-                   
-                   {  TagsData?.map((tag: any) => (
-                        <option value={tag}>{tag}</option>
-   
-                   ))}
-                    </select>   
-            </div>
-           
-            {loading ? (<div className="loader"></div> ):(
-                data.listPost.data.map((p: any) => (
-                    <Posts dataContent={p} />
+            {error ? (<div  className="loader"></div>) : (
+                <div className="body-main-page">
 
-                )))
-                }
-                {tagState}
-              
-                
-        </div>
+                    <div className="filters">
+                        <h3>Search your favorite tag!</h3>
+                        <select onChange={(e) => setTagState(e.target.value)}>
+
+                            {TagsData?.map((tag: any) => (
+                                <option value={tag}>{tag}</option>
+
+                            ))}
+                        </select>
+                    </div>
+
+                    {loading ? (<div className="loader"></div>) : (
+                        data.listPost.data.map((p: any) => (
+                            <Posts dataContent={p} />
+
+                        )))
+                    }
+                    {tagState}
+
+
+                </div>
+            )}
+
+        </>
     );
 }
 
