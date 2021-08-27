@@ -8,7 +8,7 @@ import {
 
 
 const client = new ApolloClient({
-  uri: 'https://socialnetwork-blond.vercel.app/',
+  uri: 'https://titamedia-react-app.herokuapp.com/',
   cache: new InMemoryCache()
 });
 
