@@ -8,7 +8,7 @@ import {
 
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000',
+  uri: 'https://socialnetwork-blond.vercel.app/',
   cache: new InMemoryCache()
 });
 
