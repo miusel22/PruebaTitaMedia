@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { auth, provider } from './firebase';
-import './styles/login.css';
-import Logo from './img/IconPanda.png';
+import { auth, provider } from '../firebase';
+import './styles/index.css';
+import Logo from './../img/IconPanda.png';
 
 
 const Login = () => {

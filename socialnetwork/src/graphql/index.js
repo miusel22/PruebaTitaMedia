@@ -28,7 +28,22 @@ const resolvers = {
             'app-id': '6126a500a66bd7eb968e9ba5'
           }}).then(res => res.json())
           .then(data => data)
-    }
+    }, 
+     listTag: (root, args, context) => {
+      return fetch(`${baseURL}tag?limit=10`, {headers: {
+          'app-id': '6126a500a66bd7eb968e9ba5'
+        }}).then(res => res.json())
+        .then(data => data)
+  }
+  , 
+     getTags: (root, args, context) => {
+      return fetch(`${baseURL}/tag/${args.tag}/post?limit=10`, {headers: {
+          'app-id': '6126a500a66bd7eb968e9ba5'
+        }}).then(res => res.json())
+        .then(data => data)
+      
+  },
+
     }
 }
 

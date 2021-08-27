@@ -1,0 +1,58 @@
+
+query getPosts {
+{
+  listPost{
+    data{
+      tags
+    }
+  }
+}
+}
+query getUser($id: String) {
+user(id:$id){
+id
+title
+firstName
+lastName
+gender
+email
+dateOfBirth
+registerDate
+phone
+picture
+location{
+street
+  state
+  city
+  country
+  timezone  
+}
+}
+}
+
+query getTag {
+{
+  listTag{
+    data
+  }
+}
+}
+
+query getTags($tag:String){
+getTags(tag:$tag){
+data{
+ id
+text
+image
+likes
+owner{
+  id
+  title
+  firstName
+  lastName
+  picture
+}
+publishDate
+  }
+  }
+}

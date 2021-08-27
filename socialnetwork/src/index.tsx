@@ -7,22 +7,15 @@ import {
 } from "@apollo/client";
 
 
-
 const client = new ApolloClient({
-  uri: 'https://localhost:4000',
+  uri: 'http://localhost:4000',
   cache: new InMemoryCache()
 });
 
 ReactDOM.render(
-  <>
-    <ApolloProvider client={client}>
-      <App />
-    </ApolloProvider>,
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>,
 
-
-
-  </>,
   document.getElementById('root')
 );
-
-

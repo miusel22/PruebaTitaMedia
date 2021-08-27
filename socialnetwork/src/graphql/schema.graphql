@@ -14,15 +14,25 @@ owner: User
 publishDate: String,
 tags:[String]
 }
+type Tag{
+data:[String]
+}
 type Comment{
 id: String,
-Message: String,
+message: String,
 post: String,
+owner: User,
 publishDate: String
 }
 
 type List {
     data: [User]
+    total: Int
+    page: Int
+    limit: Int
+}
+type Tags {
+    data: [Post]
     total: Int
     page: Int
     limit: Int
@@ -70,5 +80,7 @@ type Query {
   user(id: String) : UserFull
  listPost: PostList
  listComment(id: String) : Comments
+  listTag: Tag
+ getTags(tag:String) : Tags
 }
 
